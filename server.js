@@ -36,6 +36,11 @@ const url_new = "https://auth.delta.nitt.edu/api/resources/user";
 
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+    console.log("Session Data:", req.session);
+    next();
+});
+
 app.post('/getname', (req, res) => {
     const { name, password } = req.body;
 
