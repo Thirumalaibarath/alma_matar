@@ -14,7 +14,7 @@ var tokenUrl = "";
 const baseURL = "auth.delta.nitt.edu/authorize";
 const params = {
     client_id: "B-N8ma.~1IAIrS5L",
-    redirect_uri: "http://10.0.2.2:3000/redirect",
+    redirect_uri: "https://alma-matar.onrender.com/redirect",
     response_type: "code",
     grant_type: "authorization_code",
     state: "code",
@@ -63,7 +63,7 @@ app.get('/redirect', (req, res) => {
             client_secret: "2vYHnmqLsKH8772SxGkLKMVEaCcb_.0x",
             grant_type: "authorization_code",
             code: code,
-            redirect_uri: "http://10.0.2.2:3000/redirect"
+            redirect_uri: "https://alma-matar.onrender.com/redirect"
         };
 
         const tokenUrl = Object.entries(bodyParams)
