@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Redirect</title>
+    <script>
+        // Fetch the URL from the server
+        async function setAuthUrl() {
+            const response = await fetch('/get-auth-url');
+            const data = await response.json();
+            console.log(data.authUrl)
+            document.getElementById('auth-link').href = `https://${data.authUrl}`;
+        }
+
+        // Set the URL on page load
+        window.onload = setAuthUrl;
+    </script>
+</head>
+<body>
+    <h1>Authorization Example</h1>
+    <a id="auth-link" href="#">Login with DAuth</a>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "node-fetch": "^2.7.0",
+    "passport": "^0.7.0",
+    "passport-oauth2": "^1.8.0",
+    "punycode": "^2.3.1"
+  }
+}

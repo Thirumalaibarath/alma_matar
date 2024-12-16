@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Token</title>
+    <script>
+        async function setAuthUrl() {
+            const response = await fetch('/get-token-url');
+            const data = await response.json();
+            console.log(data.tokenUrl)
+            document.getElementById('token-link').href = `https://${data.tokenUrl}`;
+        }
+        window.onload = setAuthUrl;
+    </script>
+</head>
+<body>
+    <h1>Token Page</h1>
+    <a id="token-link" href="#">Get Token</a>
+</body>
+</html>
