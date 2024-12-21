@@ -44,7 +44,6 @@ app.use((req, res, next) => {
 app.post('/getname', (req, res) => {
     const { name, password } = req.body;
 
-    // Check if 'name' and 'password' are present
     if (!name || !password) {
         return res.status(400).json({ message: 'Name and password are required.' });
     }
@@ -53,10 +52,10 @@ app.post('/getname', (req, res) => {
 });
 
 app.use(session({
-    secret: 'your_secret_key',  // A secret key for signing the session ID
+    secret: 'your_secret_key', 
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }  // Set to true if using HTTPS
+    cookie: { secure: false } 
 }));
 
 app.get('/redirect', (req, res) => {
@@ -86,11 +85,11 @@ app.get('/redirect', (req, res) => {
         .then(response => response.json())
         .then(data => {
             if (data.id_token) {
-                // Store the token in the session for this specific user
                 req.session.idToken = data.id_token;
                 console.log(data.id_token)
+                // req.session.idToken
 
-                res.status(200).json({ id_token: req.session.idToken });
+                res.status(200).json({ id_token: "yep" });
                 
             } else {
                 res.status(503).json({ error: 'ID token not available.' });
@@ -106,13 +105,6 @@ app.get('/redirect', (req, res) => {
     }
 });
 
-// app.post('/get-id-token', (req, res) => {
-//     if (global.idToken) {
-//         res.status(200).json({ id_token: global.idToken });
-//     } else {
-//         res.status(500).json({ error: "ID token not set yet" });
-//     }
-// });
 app.post('/get-auth-url', (req, res) => {
     res.json({ authUrl: fullURL });
 });
