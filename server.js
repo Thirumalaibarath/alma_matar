@@ -87,9 +87,7 @@ app.get('/redirect', (req, res) => {
             if (data.id_token) {
                 req.session.idToken = data.id_token;
                 console.log(data.id_token)
-                // res.status(200).json({ id_token: req.session.idToken });
-                const redirectUrl = `https://alma-matar.onrender.com/success?id_token=${idToken}`;
-                res.redirect(redirectUrl);
+                res.status(200).json({ id_token: req.session.idToken });
             } else {
                 res.status(503).json({ error: 'ID token not available.' });
             }
