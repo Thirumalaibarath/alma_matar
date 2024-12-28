@@ -1,0 +1,27 @@
+body {
+    background-image: url('./alma_matar.png'); 
+    font-family:monospace;
+    text-align: center;
+    padding: 50px;
+    background-color:black ;
+}
+.footer{
+    font-family:monospace;
+    align-items: end;
+}
+.container {
+    margin: 0 auto;
+    background-color:black ;
+}
+#auth-link{
+    font-size: large;
+}
+
+h1 {
+    color: #9667E0;
+}
+
+.logo{
+    height:fit-content;
+}
+
