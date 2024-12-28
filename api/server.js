@@ -11,7 +11,7 @@ const url = "https://auth.delta.nitt.edu/api/oauth/token";
 const baseURL = "auth.delta.nitt.edu/authorize";
 const params = {
     client_id: "B-N8ma.~1IAIrS5L",
-    redirect_uri: "http://localhost:3000/redirect",
+    redirect_uri: "http://alma-matar.vercel.app/redirect",
     response_type: "code",
     grant_type: "authorization_code",
     state: "code",
@@ -45,7 +45,7 @@ app.get('/redirect', (req, res) => {
             client_secret: "2vYHnmqLsKH8772SxGkLKMVEaCcb_.0x",
             grant_type: "authorization_code",
             code: code,
-            redirect_uri: "http://localhost:3000/redirect"
+            redirect_uri: "http://alma-matar.vercel.app/redirect"
         }
         const tokenUrl = Object.entries(bodyParams)
             .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
@@ -78,7 +78,7 @@ app.get('/redirect', (req, res) => {
                     batch: data.batch
                   })
         )
-                const redirectUrl = `http://localhost:3000/success?id_token=${data.id_token}`;
+                const redirectUrl = `http://alma-matar.vercel.app/success?id_token=${data.id_token}`;
                 res.redirect(redirectUrl);
             } else {
                 res.status(503).json({ error: 'ID token not available.' });
