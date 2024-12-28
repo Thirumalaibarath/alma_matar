@@ -22,7 +22,7 @@ const queryString = Object.entries(params)
     .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
     .join("&");
 const fullURL = `${baseURL}?${queryString}`;
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '../public')));
 app.get('/get-auth-url', (req, res) => {
     res.json({ authUrl: fullURL });
 });
@@ -95,7 +95,7 @@ app.get('/redirect', (req, res) => {
     }
 });
 app.get('/success', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'redirect_page.html'));
+   res.sendFile(path.join(__dirname, '../public', 'redirect_page.html'));
 });
 app.post('/get-auth-url', (req, res) => {
     res.json({ authUrl: fullURL });
