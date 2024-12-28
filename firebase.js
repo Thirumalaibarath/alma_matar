@@ -1,6 +1,6 @@
 const { admin,initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
-const serviceAccount = require('./alma_matar.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_PRIVATE_KEY);
 
 // Initialize Firebase
 initializeApp({
