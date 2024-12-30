@@ -9,7 +9,6 @@ const { autoNotification } = require('../Auto_notification');
 autoNotification()
 const {generateToken} = require("../token")
 
-
 const url = "https://auth.delta.nitt.edu/api/oauth/token";
 const baseURL = "auth.delta.nitt.edu/authorize";
 const params = {
