@@ -7,6 +7,9 @@ const PORT = 3000;
 const { addStudent } = require('../datastore'); 
 const { autoNotification } = require('../Auto_notification');
 autoNotification()
+const {generateToken} = require("../token")
+
+
 const url = "https://auth.delta.nitt.edu/api/oauth/token";
 const baseURL = "auth.delta.nitt.edu/authorize";
 const params = {
@@ -30,13 +33,19 @@ const url_new = "https://auth.delta.nitt.edu/api/resources/user";
 app.use(bodyParser.json());
 app.post('/getname', (req, res) => {
     const { name, password } = req.body;
-
     if (!name || !password) {
         return res.status(400).json({ message: 'Name and password are required.' });
     }
-
     console.log(name,password)
 });
+app.get('/access_token',(req,res)=>{
+    const { name } = req.body;
+    const userPayload = {name : name};
+    const token = generateToken(
+        userPayload
+    )
+    res.json({ token:token });
+})
 app.get('/redirect', (req, res) => {
     const { code, state } = req.query;
     if (code && state) {

@@ -11,3 +11,7 @@ function generateToken(payload) {
 const userPayload = { userId: 123, email: "user@example.com", role: "admin" };
 const token = generateToken(userPayload);
 console.log("JWT Token:", token);
+
+module.exports = {
+   generateToken
+  };
