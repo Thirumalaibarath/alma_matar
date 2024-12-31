@@ -45,6 +45,11 @@ app.post('/access_token',(req,res)=>{
     )
     res.json({ token:token });
 })
+app.post('/post_deadline', authenticateToken, (req, res) => {
+    const { user } = req;
+    const { deadline } = req.body;
+    res.json({ message: `Deadline set successfully for user: ${user.name}`, deadline });
+});
 app.get('/redirect', (req, res) => {
     const { code, state } = req.query;
     if (code && state) {

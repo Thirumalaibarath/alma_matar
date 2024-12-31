@@ -8,10 +8,25 @@ function generateToken(payload) {
     });
     return token;
 }
-const userPayload = { userId: 123, email: "user@example.com", role: "admin" };
-const token = generateToken(userPayload);
-console.log("JWT Token:", token);
 
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Unauthorized: No token provided' });
+    }
+
+    jwt.verify(token, secretKey, (err, user) => {
+        if (err) {
+            return res.status(403).json({ message: 'Forbidden: Invalid token' });
+        }
+        req.user = user; // Attach the user payload to the request
+        next(); // Continue to the next middleware or route handler
+    });
+};
+
+module.exports = authenticateToken;
 module.exports = {
    generateToken
   };
