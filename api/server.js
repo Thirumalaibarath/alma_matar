@@ -37,7 +37,7 @@ app.post('/getname', (req, res) => {
     }
     console.log(name,password)
 });
-app.get('/access_token',(req,res)=>{
+app.post('/access_token',(req,res)=>{
     const { name } = req.body;
     const userPayload = {name : name};
     const token = generateToken(
