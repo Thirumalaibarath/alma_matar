@@ -4,11 +4,11 @@ const fetch = require('node-fetch');
 const app = express();
 const bodyParser = require('body-parser');
 const PORT = 3000;
-const { addStudent } = require('../datastore'); 
+const { addStudent,getCalendarDetails } = require('../datastore'); 
 const { autoNotification } = require('../Auto_notification');
 autoNotification()
-const {generateToken,authenticateToken} = require("../token")
 
+const {generateToken,authenticateToken} = require("../token")
 const url = "https://auth.delta.nitt.edu/api/oauth/token";
 const baseURL = "auth.delta.nitt.edu/authorize";
 const params = {
@@ -45,6 +45,17 @@ app.post('/access_token',(req,res)=>{
     )
     res.json({ token:token });
 })
+app.get('/calendar_details', authenticateToken, async(req, res) => {
+    const { user } = req;
+    try {
+        const events =await getCalendarDetails(user.name); // Wait for the promise to resolve
+        console.log("events ->", events); // Log the resolved data
+        res.json(events); // Send the data back in the response
+    } catch (error) {
+        console.error("Error fetching events:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
 app.post('/post_deadline', authenticateToken, (req, res) => {
     const { user } = req;
     const { deadline } = req.body;

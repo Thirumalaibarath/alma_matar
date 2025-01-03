@@ -21,8 +21,8 @@ const authenticateToken = (req, res, next) => {
         if (err) {
             return res.status(403).json({ message: 'Forbidden: Invalid token' });
         }
-        req.user = user; // Attach the user payload to the request
-        next(); // Continue to the next middleware or route handler
+        req.user = user;
+        next();
     });
 };
 
