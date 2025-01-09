@@ -48,9 +48,8 @@ app.post('/access_token',(req,res)=>{
 app.get('/calendar_details', authenticateToken, async(req, res) => {
     const { user } = req;
     try {
-        const events =await getCalendarDetails(user.name); // Wait for the promise to resolve
-        console.log("events ->", events); // Log the resolved data
-        res.json(events); // Send the data back in the response
+        const events =await getCalendarDetails(user.name); 
+        res.json(events);
     } catch (error) {
         console.error("Error fetching events:", error);
         res.status(500).send("Internal Server Error");
