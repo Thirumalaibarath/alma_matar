@@ -149,6 +149,18 @@ app.get('/privacy_policy', (req, res) => {
         }
     });
 });
+app.get('/delete_account', (req, res) => {
+    const filePath = path.join(__dirname, '../public', 'delete_account_screen.html');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading file');
+        } else {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(data);
+        }
+    });
+});
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
