@@ -3,6 +3,7 @@ const path = require('path');
 const fetch = require('node-fetch');
 const app = express();
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const PORT = 3000;
 const { addStudent,getCalendarDetails } = require('../datastore'); 
 const { autoNotification } = require('../Auto_notification');
@@ -120,14 +121,33 @@ app.get('/redirect', (req, res) => {
 app.get('/success', (res) => {
    res.sendFile(path.join(__dirname, '../public', 'redirect_page.html'));
 });
-app.get('/terms_and_conditions', (res) => {
-    res.sendFile(path.join(__dirname, '../public', 'terms_and_conditions.html'));
- });
+
 app.post('/get-auth-url', (req, res) => {
     res.json({ authUrl: fullURL });
 });
-app.get('/privacy_policy', ( res) => {
-    res.sendFile(path.join(__dirname, '../public', 'privacy_policy.html'));
+app.get('/terms_and_conditions', (req,res) => {
+    const filePath = path.join(__dirname, '../public', 'terms_and_conditions.html');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading file');
+        } else {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(data);
+        }
+    });
+});
+app.get('/privacy_policy', (req, res) => {
+    const filePath = path.join(__dirname, '../public', 'privacy_policy.html');
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading file');
+        } else {
+            res.setHeader('Content-Type', 'text/html');
+            res.send(data);
+        }
+    });
 });
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
