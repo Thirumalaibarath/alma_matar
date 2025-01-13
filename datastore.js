@@ -12,7 +12,7 @@ const addStudent = async (collectionName, documentName, data) => {
 };
 const getCalendarDetails = async (documentName) => {
   try {
-    const docRef = db.collection("calendar").doc(documentName);
+    const docRef = db.collection("student_custom_reminder").doc(documentName);
     const docSnapshot = await docRef.get();
     if (docSnapshot.exists) {
       console.log(`Document '${documentName}' data:`, docSnapshot.data());
