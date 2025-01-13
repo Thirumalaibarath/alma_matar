@@ -48,7 +48,7 @@ app.post('/access_token',(req,res)=>{
 app.get('/calendar_details', authenticateToken, async(req, res) => {
     const { user } = req;
     try {
-        const events =await getCalendarDetails(user.name); 
+        const events = await getCalendarDetails(user.name); 
         res.json(events);
     } catch (error) {
         console.error("Error fetching events:", error);
@@ -117,11 +117,17 @@ app.get('/redirect', (req, res) => {
         res.status(400).send('Missing authorization code or state');
     }
 });
-app.get('/success', (req, res) => {
+app.get('/success', (res) => {
    res.sendFile(path.join(__dirname, '../public', 'redirect_page.html'));
 });
+app.get('/terms_and_conditions', (res) => {
+    res.sendFile(path.join(__dirname, '../public', 'terms_and_conditions.html'));
+ });
 app.post('/get-auth-url', (req, res) => {
     res.json({ authUrl: fullURL });
+});
+app.get('/privacy_policy', ( res) => {
+    res.sendFile(path.join(__dirname, '../public', 'privacy_policy.html'));
 });
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
