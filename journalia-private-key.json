@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "journalia-a72df",
+  "private_key_id": "0e777ee03f3e0859837421ea398cd248c0cf8f3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDdNk4vhFg8OYoa\nGTHfaM9UlnScLljnRTPLxobD/W+5jQZVpOhQT2XnTCUCTDlMwSMnDgTNgZjPXTXq\nZQo7YITzJXTWF2hDDTN8ox22G0qEL2vHW868wz9+gPnIg6Y38XWOE69ViBqZNLGS\nleDIJk87BePuXC2DYQHPrIXWKgO2bFDmn/+8/b70WjwF70o5ZkcgXgAW3r3vYCC/\nuj7LVdCJJffdutIT1nTI4R2VrAMLsCjNMQAHTMayHm8Ix72pXwk+pt4cR+PQaZuk\nSHvsC3hOTvz3Poqlk5VLbRZ8oFs1kh5qbajfa8YHQ+dA/59p+c1y94/QPFVDyQK0\nn88+cI13AgMBAAECggEABHyTl9Q9OsqVv0GKc4XikUxNPdYjQXkeZmA2wtv71HSZ\n5RE82Bwl7KElgwOkGBj91d0PCW8ed/qqxg4oIKMQLz+hkZINhaMSktEh53hrybXj\nLdcq9e+XZqSp7EeJDr0xURLw6cZpsQboBG7C4uxYb0N5NayIRY/+ri/z7oTYTG6F\nbc/zX5x5iokXi2yXQg2YImA+fQ1+v4Rs3UUvC5eaof6sFx5Hzg9NGfLJmnEU/B0L\nvqGctNqwbAHOlqrnN3g0RSjRI6yvAOjX8sHVjwcfAXzECo0in2TMDlkquElL+mMG\na0xssKBuXqp1aSZYwkulO8vknHqmDsdFTcKk1oXpyQKBgQD0pmmDOTurHnLKR0Tb\nf9hW/uVRYfwbDh/88CWaZ1LJoTh8qsdKCOlHc7Jk0jT2Cl5TKBtZRa7KLGJTU3aM\n5GtgG55CU3ciTHzAEeg1f6VHfk+FWVIi3RvIsUqZ+QPNEPQnJNDEk3BQprK4pVIi\nfuptfrHbeeX8IDpAEgFTjPNNrQKBgQDneYhd/38s3utuOLOLrrZITTluR8B/+ae5\ng9Fa/cpnYxuJnqWWqDZf32aTHuwQ0cO0y33ocq85T+oLe1ZZP89Pgrxph5/bNWtP\n7rwPY7rcfS8LCjZ6THE6hhVbAEfeusaDHkokkgqskZrGjfF4QgNf+eA8aHSL1lQW\nxXedITLkMwKBgQCevCKVq9rVKkpciGVa7dZWi8gKR8MlYsLKgJ5FUmjavipCaSQp\nGyMQ4zaKSAFo6k1NMyabg6TnNGkPm4W94K7yirjiW/leXbZLgNLjc1Cv1HqQEOZE\nDKZsTuwSfwlCUo+3niF+ihNDoQUw3MMv8pz0MlIAD1Vzgw2IaKZHqZpreQKBgQCO\nYJO/daNM/0UCw/+0IF/gsxdrPNksHmzLUEha1pZD55MNoDasJ4VijTAzuCZt5gih\n0TT94GTlNMF6FIA1X2ltt7Wal6B9HiuGvAqS0L4kVx+zg7GkohZXcBf8pHyQhIQM\nLHpgajAEm37/OFnZpYkb5L/HiFx/kvKgGxAK51u9PwKBgBIU0uUfHjp/hYMQia/B\nbEQ9oVoPjCilFEO7w3O28Mo1OeylCLt4v0O+kWR2dYQvhmA/33khyZcaggBZGtzr\nZLz94XrJMvf5vmfVzXPdzXsNgR5lmQP3zkD+LwBzIn4Myr2ceLiqKeVDq7RuUHd+\nTnfD1HAh85FI4/lpGl8IZuMs\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-d43om@journalia-a72df.iam.gserviceaccount.com",
+  "client_id": "117552913870070335545",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-d43om%40journalia-a72df.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -23,16 +23,14 @@ function notification(title,body)
           title: title,
           body: body,
         },
-        tokens: tokens, // Send to all the retrieved FCM tokens
+        tokens: tokens, 
       };
-    
-      // Send message to the tokens
+  
       admin.messaging().sendEachForMulticast(message)
         .then(response => {
           console.log(response.successCount + ' messages were sent successfully');
-          // Handle the result as needed, e.g., log the failed tokens
           if (response.failureCount > 0) {
-            console.log(response.responses); // Log failed response details
+            console.log(response.responses);
           }
         })
         .catch(error => {

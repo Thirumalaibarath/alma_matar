@@ -118,7 +118,7 @@ app.get('/redirect', (req, res) => {
         res.status(400).send('Missing authorization code or state');
     }
 });
-app.get('/success', (res) => {
+app.get('/success', (req,res) => {
    res.sendFile(path.join(__dirname, '../public', 'redirect_page.html'));
 });
 
