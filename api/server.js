@@ -163,7 +163,7 @@ app.get('/delete_account', (req, res) => {
 });
 
 app.get("/image", (req, res) => {
-    res.sendFile(__dirname + "/public/container.svg");
+    res.sendFile(__dirname + "../public/container.svg");
   });
 
 app.listen(PORT, () => {
