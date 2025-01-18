@@ -163,18 +163,26 @@ app.get('/delete_account', (req, res) => {
 });
 
 app.get("/image", (req, res) => {
-    const filePath = path.join(__dirname, '../public', 'container.svg');
+    const fileName = req.query.file;
+    if (!fileName) {
+        return res.status(400).send('File name is required');
+    }
+    const filePath = path.join(__dirname, '../public', fileName);
+
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
-            res.status(500).send('Error reading file');
-        } else {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(data);
-        }
-    });
-  });
 
+            if (err.code === 'ENOENT') {
+                return res.status(404).send('File not found');
+            }
+
+            return res.status(500).send('Error reading file');
+        }
+        res.setHeader('Content-Type', 'image/svg+xml');
+        res.send(data);
+    });
+});
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
